@@ -3,13 +3,13 @@ import {config} from "dotenv"
 import morgan from "morgan"
 import cors from "cors"
 import adminRoutes from "../routes/index.js"
-
 config()
 
 
 const app=express()
 
-const PORT=process.env.PORT ||1000      
+const PORT=process.env.PORT ||1000  
+ 
 //middlewares
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -28,6 +28,7 @@ export const startServer=()=>{
     try{
         app.listen(PORT,()=>{
             console.log(`server started at: http://localhost:${PORT}`)
+               
         })
     }catch(err){
         throw new Error(err)
